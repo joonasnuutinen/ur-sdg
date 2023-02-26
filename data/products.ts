@@ -44,6 +44,7 @@ export default products
 
 // Recursively aggregate alignment from ancestor nodes
 export const getAggregatedAlignment = (id: string): Alignment => {
+  // Could be optimised with a hash map (e.g. if using a relational db)
   const product = products.find((p) => p.id === id)
   if (!product) throw Error('Product not found')
 

@@ -113,6 +113,7 @@ const CompanyNotFound = () => {
 const Company = () => {
   const router = useRouter()
   const { pid } = router.query
+  // Currently O(n), could be optimised to O(log(n)) with a hash map (e.g. if using a relational db)
   const company = companies.find(({ id }) => id === pid)
 
   if (!company) return <CompanyNotFound />
