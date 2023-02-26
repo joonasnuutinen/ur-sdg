@@ -13,7 +13,8 @@ const products: Product[] = [
     id: 'food',
     name: 'Food',
     alignment: {
-      hunger: 2
+      hunger: 1,
+      health: 1
     }
   },
   {
@@ -21,7 +22,7 @@ const products: Product[] = [
     name: 'Fruit',
     parent: 'food',
     alignment: {
-      health: 1
+      health: 2
     }
   },
   {
@@ -50,5 +51,6 @@ export const getAggregatedAlignment = (id: string): Alignment => {
 
   if (!product.parent) return { ...alignment }
 
-  return { ...alignment, ...getAggregatedAlignment(product.parent) }
+  // Aggregate top-down so that the most specific individual alignment remains in force
+  return { ...getAggregatedAlignment(product.parent), ...alignment }
 }
