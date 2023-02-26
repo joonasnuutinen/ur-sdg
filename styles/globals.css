@@ -105,3 +105,7 @@ a {
     color-scheme: dark;
   }
 }
+
+li {
+  margin-left: 2em;
+}

@@ -1,10 +1,18 @@
 import { useRouter } from 'next/router'
 import companies, { RevenueMix } from '@/data/companies'
-import sdgs from '@/data/sdgs'
+import sdgs, { SDG } from '@/data/sdgs'
 import { getAggregatedAlignment } from '@/data/products'
 
 const CompanyNotFound = () => {
   return <p>Company not found</p>
+}
+
+interface SdgProps {
+  sdg: SDG
+}
+
+const Sdg = ({ sdg }: SdgProps) => {
+  return <li>{sdg.name}</li>
 }
 
 interface AlignmentProps {
@@ -22,9 +30,9 @@ const Alignment = ({ revenueMix }: AlignmentProps) => {
   })
   console.log(products)
   return (
-    <div>
-      Alignment
-    </div>
+    <ol>
+      {sdgs.map((sdg) => <Sdg key={sdg.id} sdg={sdg} />)}
+    </ol>
   )
 }
 

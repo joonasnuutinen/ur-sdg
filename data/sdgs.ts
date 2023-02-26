@@ -1,4 +1,4 @@
-interface SDG {
+export interface SDG {
   id: string
   name: string
 }
