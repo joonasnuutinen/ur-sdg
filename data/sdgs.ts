@@ -25,7 +25,7 @@ const sdgs = [
     name: 'Gender equality'
   },
   {
-    id: 'water',
+    id: 'clean-water',
     name: 'Clean water and sanitation'
   },
   {
@@ -57,7 +57,7 @@ const sdgs = [
     name: 'Climate action'
   },
   {
-    id: 'water',
+    id: 'below-water',
     name: 'Life below water'
   },
   {

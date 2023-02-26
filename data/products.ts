@@ -1,4 +1,4 @@
-interface Alignment {
+export interface Alignment {
   [key: string]: number
 }
 interface Product {
@@ -34,7 +34,7 @@ const products: Product[] = [
     name: 'Pear',
     parent: 'fruit',
     alignment: {
-      water: -1
+      'clean-water': -1
     }
   },
 ]
