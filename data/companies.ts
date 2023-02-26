@@ -1,9 +1,11 @@
-interface Company {
+export interface RevenueMix {
+  [key: string]: number
+}
+
+export interface Company {
   id: string
   name: string
-  revenueMix: {
-    [key: string]: number
-  }
+  revenueMix: RevenueMix
 }
 
 const companies: Company[] = [
